@@ -13,8 +13,6 @@ class UsersService
 
     async create(email:string)
     {
-        
-
         //verificar se o usuário existe
         const userExists = await this.usersRepository.findOne({email});
        
@@ -28,6 +26,13 @@ class UsersService
 
         return user;
     }
+
+    async findByEmail(email: string) 
+    {
+        const user = await this.usersRepository.findOne({ email });
+      
+        return user;
+      }
 }
 
 export { UsersService };
