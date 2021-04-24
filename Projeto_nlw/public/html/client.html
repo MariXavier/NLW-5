@@ -22,11 +22,9 @@
       </div>
 
       <div class="text_support">
-        <script id="email-template" type="text/template">
+        <script id="message-user-template" type="text/template">
           <div class="client">
             <span class="name">{{email}}</span>
-        </script>
-        <script id="message-user-template" type="text/template">
             <span class="client message">
               {{message}}
               <!-- <label class="date">{{date}}</label> -->
@@ -58,7 +56,7 @@
     <div class="chat chat_support" id="chat_help">
       <div class="in_support_header">
         <span>Iniciar um chat de suporte</span>
-        <div class="icon_close" onclick="closeChat();">
+        <div class="icon_close" id="btnCloseChat" onclick="closeChat();">
           <img src="/images/close.png" />
         </div>
       </div>
@@ -117,7 +115,7 @@
     }
 
     function closeChat() {
-      chat.style.display = "none";
+      fecharConexao();
     }
 
     function keyUpTextHelp(event) {
